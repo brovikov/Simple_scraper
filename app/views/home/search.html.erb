@@ -1,0 +1,37 @@
+<b>Search results for</b> <%= @search %>:<br><br>
+Ads top: <br>
+<% @ads_top.each do |cite| %>
+<%=  link_to cite.inner_text, cite.inner_text %> <br>
+<% end %>
+
+<br><br><br>
+<% @search_results.each do |cite| %>
+<%=  link_to cite.inner_text, cite.inner_text %> <br>
+<% end %>
+
+<br><br><br>
+Ads bottom: <br>
+<% @ads_bottom.each do |cite| %>
+<%=  link_to cite.inner_text, cite.inner_text %> <br>
+<% end %>
+
+
+ <br><br><br>
+Ads right: <br>
+<% @ads_right.each do |cite| %>
+<%=  link_to cite.inner_text, cite.inner_text %> <br>
+<% end %>
+<br>
+
+ <br><br><br>
+All by cite search: <br>
+<% @all_cite.each do |cite| %>
+<%=  link_to cite.inner_text, cite.inner_text %> <br>
+<% end %>
+<br>
+
+About <%= @total_search_results  %> results<br>
+Total adsense: <%= @ads_total  %> results
+<br>
+
+Total found on first page: <%= @search_results.count + @ads_total %>

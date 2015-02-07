@@ -27,6 +27,16 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
+gem 'nokogiri'
+gem 'magic_encoding' #For russian encoding
+
+group :development do
+  gem 'better_errors'
+  gem  'binding_of_caller'
+  gem 'meta_request'
+end
+
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
