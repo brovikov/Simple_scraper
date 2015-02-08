@@ -32,6 +32,7 @@ gem 'magic_encoding' #For russian encoding
 gem 'sidekiq' #For background jobs
 gem 'sinatra', require: false
 gem 'slim'
+gem 'devise' #For user authentification
 
 group :development do
   gem 'better_errors'

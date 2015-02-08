@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 Myapp::Application.routes.draw do
+  devise_for :users
   require 'sidekiq/web'
   get "home/index"
   resources :keywords do
