@@ -1,2 +1,59 @@
-<h1>Reports#show</h1>
-<p>Find me in app/views/reports/show.html.erb</p>
+<center>
+  <h3>Report for keyword <b><%= @keyword.phrase %></b></h3>
+  <p>
+    <small>
+      Total links on page: <b><%= @keyword.total_links %></b> | 
+      Total AdSense links: <b><%= @keyword.ads_total %></b> |
+      Overall total links: <b><%= @keyword.overall_total_search_res %></b> 
+    </small>
+  </p>
+</center>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <p class="ads">
+        <b> Top AdSense links (<%= @keyword.ads_top_total %>)</b><br>
+        <% @keyword.links.ads_top_list.each do |ads| %>
+        <%= link_to ads.url, ads.url %> <br>
+        <% end %>
+        <% if @keyword.links.ads_top_list.blank? %>
+          Sorry, no one link for this category has been scrapped 
+        <% end %>
+      </p>
+
+      <p class="search">
+        <b> Search results (<%= @keyword.search_on_page_total %>)</b><br>
+        <% @keyword.links.search_list.each do |search| %>
+        <%= link_to search.url, search.url %> <br>
+        <% end %>
+        <% if @keyword.links.search_list.blank? %>
+          Sorry, no one link for this category has been scrapped 
+        <% end %>
+      </p>
+
+      <p class="ads">
+        <b> Bottom AdSense links (<%= @keyword.ads_bottom_total %>) </b><br>
+        <% @keyword.links.ads_bottom_list.each do |ads| %>
+        <%= link_to ads.url, ads.url %> <br>
+        <% end %>
+        <% if @keyword.links.ads_bottom_list.blank? %>
+          Sorry, no one link for this category has been scrapped 
+        <% end %>
+      </p>
+     </div>
+      <div class="col-md-6">
+        <p class="ads">
+          <b> Right AdSense links (<%= @keyword.ads_right_total %>)</b><br>
+          <% @keyword.links.ads_right_list.each do |ads| %>
+          <%= link_to ads.url, ads.url %> <br>
+          <% end %>
+          <% if @keyword.links.ads_right_list.blank? %>
+            Sorry, no one link for this category has been scrapped 
+          <% end %>
+        </p>
+      </div>
+    </div>
+</div>
+<br>
+<%= link_to 'Back', reports_path %>

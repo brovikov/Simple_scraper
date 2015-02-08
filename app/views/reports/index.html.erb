@@ -1,2 +1,32 @@
-<h1>Reports#index</h1>
-<p>Find me in app/views/reports/index.html.erb</p>
+<center>
+  <h3>List of uploaded keywords</h3>
+
+  <table class="table" data-toggle="table"  data-height="299">
+    <thead>
+      <tr>
+        <th>Keyword</th>
+        <th>Ads in Top</th>
+        <th>Ads in Bottom</th>
+        <th>Ads in Right</th>
+        <th>Total Ads links</th>
+        <th>Search links</th>
+        <th>Total on page</th>
+        <th>Overall total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @keywords.each do |keyword| %>
+        <tr>
+          <td><%= link_to keyword.phrase, report_path(keyword) %></td>
+          <td><%= keyword.ads_top_total %></td>
+          <td><%= keyword.ads_bottom_total %></td>
+          <td><%= keyword.ads_right_total %></td>
+          <td><%= keyword.ads_total %></td>
+          <td><%= keyword.search_on_page_total %></td>
+          <td><%= keyword.total_links %></td>          
+          <td><%= keyword.overall_total_search_res %></td>
+        </tr>
+       <% end %>
+      </tbody>
+</table>
+</center>

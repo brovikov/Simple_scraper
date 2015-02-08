@@ -3,7 +3,8 @@
   <p id='import_csv'>
   <%= form_tag import_keywords_path, multipart: true do %>
     <%= file_field_tag :file %>
-    <%= submit_tag "Import" %>
+    <br>
+    <%= submit_tag "Import", class: "btn btn-primary" %>
   <% end %>
   <p>
 </center>

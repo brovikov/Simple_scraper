@@ -1,7 +1,6 @@
 # -*- encoding : utf-8 -*-
 Myapp::Application.routes.draw do
-  get "reports/index"
-  get "reports/show"
+  resources :reports
   devise_for :users
   require 'sidekiq/web'
   get "home/index"
@@ -13,7 +12,9 @@ Myapp::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
 root to: 'home#index'
-mount Sidekiq::Web, at: "/sidekiq"
+authenticate :user do
+  mount Sidekiq::Web, at: "/sidekiq"
+end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

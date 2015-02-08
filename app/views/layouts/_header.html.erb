@@ -6,11 +6,11 @@
         <ul class="nav navbar-nav">
           <li><%= link_to "Home",    '/' %></li>
           <% if signed_in? %>
-            <li><%= link_to "Reports",    '/' %></li>
-            <li><%= link_to "Sidekiq",    '/sidekiq' %></li>
-            <li><%= link_to "Sign out",destroy_user_session_path, method: "delete" %></li>
+            <li><%= link_to "Reports", reports_path %></li>
+            <li><%= link_to "Sidekiq", sidekiq_web_path %></li>
+            <li><%= link_to "Sign out", destroy_user_session_path, method: "delete" %></li>
           <% else %>
-            <li><%= link_to "Sign in", '#' %></li>
+            <li><%= link_to "Sign in", new_user_session_path %></li>
           <% end %>
         </ul>
       </nav>
