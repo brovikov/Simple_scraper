@@ -1,6 +1,6 @@
 class ReportsController < ApplicationController
   def index
-    @keywords = Keyword.all
+    @keywords = Keyword.order(phrase: :asc)
   end
 
   def show
