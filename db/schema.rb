@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20150208125731) do
 
-  create_table "keywords", force: true do |t|
+  create_table "keywords", force: :cascade do |t|
     t.string   "phrase"
     t.integer  "ads_top_total"
     t.integer  "ads_bottom_total"
@@ -27,15 +27,15 @@ ActiveRecord::Schema.define(version: 20150208125731) do
     t.datetime "updated_at"
   end
 
-  create_table "links", force: true do |t|
-    t.string   "url"
+  create_table "links", force: :cascade do |t|
+    t.text     "url"
     t.string   "type"
     t.integer  "keyword_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
