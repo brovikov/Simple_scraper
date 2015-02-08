@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.2'
+gem 'rails', '4.2.0'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
@@ -26,13 +26,14 @@ gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
-
+gem 'sprockets-rails', ' ~> 2.1.4', require: 'sprockets/railtie'
 gem 'nokogiri'
 gem 'magic_encoding' #For russian encoding
 gem 'sidekiq' #For background jobs
 gem 'sinatra', require: false
 gem 'slim'
 gem 'devise' #For user authentification
+gem 'bootstrap-sass', '~> 3.3.3'
 
 group :development do
   gem 'better_errors'

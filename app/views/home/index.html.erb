@@ -1,5 +1,9 @@
-<h2>Import Links</h2>
-<%= form_tag import_keywords_path, multipart: true do %>
-  <%= file_field_tag :file %>
-  <%= submit_tag "Import" %>
-<% end %>
+<center>
+  <h3>Import Links from CSV file</h3>
+  <p id='import_csv'>
+  <%= form_tag import_keywords_path, multipart: true do %>
+    <%= file_field_tag :file %>
+    <%= submit_tag "Import" %>
+  <% end %>
+  <p>
+</center>
