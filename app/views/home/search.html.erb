@@ -23,13 +23,6 @@ Ads right: <br>
 <% end %>
 <br>
 
- <br><br><br>
-All by cite search: <br>
-<% @all_cite.each do |cite| %>
-<%=  link_to cite.inner_text, cite.inner_text %> <br>
-<% end %>
-<br>
-
 About <%= @total_search_results  %> results<br>
 Total adsense: <%= @ads_total  %> results
 <br>

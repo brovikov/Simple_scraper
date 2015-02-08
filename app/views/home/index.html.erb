@@ -1,5 +1,5 @@
-<%= form_tag("home/search", method: "get") do %>
-  <%= label_tag(:q, "Search for:") %>
-  <%= text_field_tag(:q) %>
-  <%= submit_tag("Search") %>
+<h2>Import Links</h2>
+<%= form_tag import_keywords_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import" %>
 <% end %>
