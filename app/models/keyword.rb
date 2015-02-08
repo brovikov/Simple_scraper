@@ -1,4 +1,5 @@
 class Keyword < ActiveRecord::Base
+  include RocketPants::Cacheable
   require 'nokogiri'
   require 'open-uri'
   require 'csv'

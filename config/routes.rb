@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 Myapp::Application.routes.draw do
+  use_doorkeeper
   resources :reports
   devise_for :users
   require 'sidekiq/web'
@@ -14,6 +15,12 @@ Myapp::Application.routes.draw do
 root to: 'home#index'
 authenticate :user do
   mount Sidekiq::Web, at: "/sidekiq"
+end
+api :version => 1 do
+  resources :key_words, :only => [:index, :show] do
+    member { get :link}
+    collection { get :links}
+  end
 end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

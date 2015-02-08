@@ -34,6 +34,9 @@ gem 'sinatra', require: false
 gem 'slim'
 gem 'devise' #For user authentification
 gem 'bootstrap-sass', '~> 3.3.3'
+gem 'rocket_pants', '~> 1.0'
+gem 'will_paginate', '~> 3.0.6'
+gem 'doorkeeper'
 
 group :development do
   gem 'better_errors'
